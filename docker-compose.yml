@@ -1,0 +1,8 @@
+version: '3'
+services:
+  pushfarm:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./data:/app/data

@@ -1,0 +1,38 @@
+{
+  "name": "pushfarm-api",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {
+    "@fastify/http-proxy": "^9.2.1",
+    "@fastify/multipart": "^7.5.0",
+    "@fastify/static": "^6.9.0",
+    "@kreds/fastify": "^0.0.2",
+    "@kreds/server": "^0.0.1",
+    "@kreds/strategy-bearer": "^0.0.1",
+    "@kreds/strategy-jwt": "^0.0.1",
+    "@kreds/strategy-mock": "^0.0.1",
+    "@kreds/strategy-oidc": "^0.0.2",
+    "@kreds/types": "^0.0.1",
+    "@prisma/client": "4.14.1",
+    "@types/http-errors": "^2.0.1",
+    "@types/node": "^18.14.6",
+    "@types/uuid": "^9.0.1",
+    "@types/web-push": "^3.3.2",
+    "fastify": "^4.14.1",
+    "http-errors": "^2.0.0",
+    "json-schema-to-ts": "^2.7.2",
+    "pino": "^8.11.0",
+    "pino-pretty": "^10.0.0",
+    "typescript": "^5.0.4",
+    "uuid": "^9.0.0",
+    "web-push": "^3.6.1"
+  },
+  "scripts": {
+    "start": "prisma db push && tsx ./src/index.ts",
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint src"
+  },
+  "type": "module"
+}

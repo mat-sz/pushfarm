@@ -1,0 +1,36 @@
+{
+  "kreds": {
+    "redirectUrl": "http://localhost:3000/",
+    "strategies": [
+      {
+        "type": "mock",
+        "name": "mock",
+        "redirectUrl": "http://localhost:5000/kreds/callback/mock",
+        "payload": {
+          "userInfo": {
+            "sub": "mock",
+            "name": "MockUser",
+            "email": "mock@pushfarm.local"
+          },
+          "token": {
+            "refresh_token": "mock"
+          }
+        }
+      },
+      {
+        "type": "jwt",
+        "name": "jwt",
+        "expiry": 3600,
+        "key": "REPLACE_ME"
+      }
+    ]
+  },
+  "pushfarm": {
+    "useProxy": false,
+    "vapid": {
+      "subject": "https://your-url.com",
+      "privateKey": "your_vapid_key",
+      "publicKey": "your_vapid_key"
+    }
+  }
+}

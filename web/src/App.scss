@@ -1,0 +1,205 @@
+@import '@kreds/react/index.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: #222;
+  color: white;
+}
+
+.nav {
+  background: #111;
+  padding: 1rem;
+}
+
+button {
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+
+  &:hover {
+    background: #444;
+  }
+}
+
+input,
+select {
+  background: #1a1a1a;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  color: white;
+}
+
+label {
+  display: block;
+}
+
+form {
+  width: 350px;
+
+  label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    input,
+    select {
+      flex: 1;
+      margin-left: 0.5rem;
+    }
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+.single-line {
+  width: auto;
+
+  label {
+    display: inline-block;
+  }
+
+  button {
+    display: inline-block;
+    width: auto;
+    margin-left: 0.5rem;
+  }
+}
+
+.accordion {
+  &.is-open {
+    .accordion-title:before {
+      content: '▼';
+      padding-right: 1rem;
+    }
+  }
+
+  &:not(.is-open) {
+    .accordion-title:before {
+      content: '▶';
+      padding-right: 1rem;
+    }
+  }
+
+  .accordion-title {
+    width: 100%;
+    background: none;
+    text-align: left;
+  }
+
+  .accordion-content {
+    padding-left: 2rem;
+  }
+}
+
+.home {
+  padding: 1rem;
+}
+
+table {
+  td:first-child {
+    min-width: 200px;
+  }
+
+  button {
+    margin-right: 0.5rem;
+  }
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.modal {
+  background: #222;
+  width: 100%;
+  height: 100%;
+  color: white;
+  overflow: hidden;
+
+  h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: normal;
+  }
+
+  &_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+    h2 {
+      flex: 1;
+    }
+
+    button {
+      background: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0;
+
+      svg {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &_content {
+    padding: 1rem;
+  }
+
+  &_actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+
+    & > * {
+      margin-left: 0.1rem;
+    }
+  }
+
+  &_secondary_actions {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .modal {
+    width: 500px;
+    height: auto;
+    border-radius: 6px;
+  }
+
+  .home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,0 +1,15 @@
+yarn-error.log
+npm-error.log
+node_modules
+dist
+build
+
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.db
+.config.json
+*.db-journal
+files
+.DS_Store
